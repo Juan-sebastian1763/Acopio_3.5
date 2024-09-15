@@ -1,0 +1,7 @@
+.imagen-inicio {
+  box-sizing: border-box;
+  width: 650px;
+  height: 650px;  
+  margin: auto;
+  align-items: center;
+}

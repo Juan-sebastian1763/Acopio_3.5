@@ -1,0 +1,419 @@
+{
+  "usuarios": [
+    {
+      "id": "c913",
+      "correo": "narly@gmail.com",
+      "contraseña": "25d55ad283aa400af464c76d713c07ad",
+      "nombre": "narly",
+      "rol": "Instructor"
+    },
+    {
+      "id": "6537",
+      "correo": "egranados@gmail.com",
+      "contraseña": "25d55ad283aa400af464c76d713c07ad",
+      "nombre": "erick",
+      "rol": "administrador"
+    },
+    {
+      "id": "8d71",
+      "correo": "jodavelo3040@arp.edu.co",
+      "contraseña": "25d55ad283aa400af464c76d713c07ad",
+      "nombre": "jonathan",
+      "rol": "Instructor"
+    },
+    {
+      "id": "0948",
+      "correo": "marlin@gmail.com",
+      "contraseña": "25d55ad283aa400af464c76d713c07ad",
+      "nombre": "Marlin dolpi",
+      "rol": "Instructor"
+    }
+  ],
+  "peticiones": [
+    {
+      "id": "c1be",
+      "usuario_id": "8d71",
+      "nombre_usuario": "jonathan",
+      "numero_telefono": "3006130984",
+      "entrega_aproximada": null,
+      "devolucion_aproximada": null,
+      "material_id": "1",
+      "material_img": "../../src/assets/img/materiales/marcador-negro.png",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "e175",
+      "usuario_id": "8d71",
+      "nombre_usuario": "jonathan",
+      "numero_telefono": "3006130984",
+      "entrega_aproximada": null,
+      "devolucion_aproximada": null,
+      "material_id": "2",
+      "material_img": "../../src/assets/img/materiales/marcador-rojo.png",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "9b2d",
+      "usuario_id": "8d71",
+      "nombre_usuario": "junior",
+      "numero_telefono": "3128754569",
+      "entrega_aproximada": null,
+      "devolucion_aproximada": null,
+      "material_id": "1",
+      "material_img": "../../src/assets/img/materiales/marcador-negro.png",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "93af",
+      "usuario_id": "c913",
+      "nombre_usuario": "narly",
+      "numero_telefono": "3006130984",
+      "entrega_aproximada": null,
+      "devolucion_aproximada": null,
+      "material_id": "4",
+      "material_img": "../../src/assets/img/materiales/computador-portatil.png",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "d199",
+      "usuario_id": "c913",
+      "nombre_usuario": "jd.vega@arp.edu.co",
+      "numero_telefono": "3006130984",
+      "entrega_aproximada": null,
+      "devolucion_aproximada": null,
+      "material_id": "4",
+      "material_img": "../../src/assets/img/materiales/computador-portatil.png",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "4620",
+      "identificador": "",
+      "descripción": "",
+      "estado": "",
+      "cantidad": "10",
+      "situación": "",
+      "material_id": "1",
+      "material_img": "../../src/assets/img/materiales/marcador-negro.png"
+    },
+    {
+      "id": "e53a",
+      "usuario_id": "c913",
+      "nombre_usuario": "narly",
+      "numero_telefono": "3006130984",
+      "entrega_aproximada": "2024-09-10",
+      "devolucion_aproximada": "2024-09-11",
+      "ambiente": "404",
+      "fichaUso": "2902274",
+      "tiempoUso": "",
+      "cantidad": "1",
+      "material_id": "2",
+      "material_img": "../../src/assets/img/materiales/marcador-rojo.png",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "3c84",
+      "usuario_id": "c913",
+      "nombre_usuario": "Narly Beatriz",
+      "numero_telefono": "321654646",
+      "entrega_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 4
+      },
+      "devolucion_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 26
+      },
+      "material_id": "7",
+      "material_img": "../../src/assets/img/materiales/proyector.png",
+      "cantidad": 10,
+      "estado": "Aceptado"
+    },
+    {
+      "id": "29e4",
+      "usuario_id": "c913",
+      "nombre_usuario": "Narly Beatriz ",
+      "numero_telefono": "32132154",
+      "entrega_aproximada": "2024-09-15",
+      "devolucion_aproximada": "2024-10-01",
+      "ambiente": "403",
+      "fichaUso": "2902274",
+      "tiempoUso": "8938293",
+      "cantidad": "2",
+      "material_id": "6",
+      "material_img": "../../src/assets/img/materiales/hdmi.png",
+      "estado": "Aceptado"
+    },
+    {
+      "id": "fe0c",
+      "usuario_id": "c913",
+      "nombre_usuario": "Narly Beatriz",
+      "numero_telefono": "321654654",
+      "entrega_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 11
+      },
+      "devolucion_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 20
+      },
+      "material_id": "2",
+      "material_img": "../../src/assets/img/materiales/marcador-rojo.png",
+      "cantidad": 20,
+      "estado": "Aceptado"
+    },
+    {
+      "id": "1139",
+      "usuario_id": "c913",
+      "nombre_usuario": "Narly Beatriz",
+      "numero_telefono": "321354654",
+      "entrega_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 12
+      },
+      "devolucion_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 23
+      },
+      "material_id": "4",
+      "material_img": "../../src/assets/img/materiales/computador-portatil.png",
+      "cantidad": 1,
+      "estado": "Aceptado"
+    },
+    {
+      "id": "e40a",
+      "usuario_id": "c913",
+      "nombre_usuario": "Narly Beatriz",
+      "numero_telefono": "321465451",
+      "entrega_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 13
+      },
+      "devolucion_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 24
+      },
+      "material_id": "3",
+      "material_img": "../../src/assets/img/materiales/borrador-tablero.png",
+      "cantidad": 3,
+      "estado": "Aceptado"
+    },
+    {
+      "id": "5c14",
+      "usuario_id": "c913",
+      "nombre_usuario": "Juan Sebastian",
+      "numero_telefono": "306465455",
+      "entrega_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 19
+      },
+      "devolucion_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 27
+      },
+      "material_id": "1",
+      "material_img": "../../src/assets/img/materiales/marcador-negro.png",
+      "cantidad": 3,
+      "estado": "Pendiente"
+    },
+    {
+      "id": "ad2a",
+      "usuario_id": "c913",
+      "nombre_usuario": "Narly Beatriz",
+      "numero_telefono": "304654645",
+      "entrega_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 14
+      },
+      "devolucion_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 17
+      },
+      "material_id": "5",
+      "material_img": "../../src/assets/img/materiales/martillo.png",
+      "cantidad": 1,
+      "estado": "Pendiente"
+    },
+    {
+      "id": "26c8",
+      "usuario_id": "0948",
+      "nombre_usuario": "Marlin dolpi",
+      "numero_telefono": "3046564654",
+      "entrega_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 16
+      },
+      "devolucion_aproximada": {
+        "calendar": {
+          "identifier": "gregory"
+        },
+        "era": "AD",
+        "year": 2024,
+        "month": 9,
+        "day": 18
+      },
+      "material_id": "3",
+      "material_img": "../../src/assets/img/materiales/borrador-tablero.png",
+      "cantidad": 21,
+      "estado": "Pendiente"
+    }
+  ],
+  "materiales": [
+    {
+      "id": "1",
+      "nombre": "Marcador",
+      "tipo": "suministro",
+      "cantidad_disponible": 190,
+      "estado": "nuevo",
+      "descripcion": "Elemento empleado para usar en tableros especiales",
+      "color": "negro",
+      "img": "../../src/assets/img/materiales/marcador-negro.png"
+    },
+    {
+      "id": "2",
+      "nombre": "Marcador",
+      "tipo": "suministro",
+      "cantidad_disponible": 199,
+      "estado": "nuevo",
+      "descripcion": "Elemento empleado para usar en tableros especiales",
+      "color": "rojo",
+      "img": "../../src/assets/img/materiales/marcador-rojo.png"
+    },
+    {
+      "id": "3",
+      "nombre": "Borrador De Tablero",
+      "tipo": "suministro",
+      "cantidad_disponible": 50,
+      "estado": "Nuevo",
+      "descripcion": "Elemento empleado para borrar en tableros especiales",
+      "color": "negro",
+      "img": "../../src/assets/img/materiales/borrador-tablero.png"
+    },
+    {
+      "id": "4",
+      "nombre": "Computador",
+      "tipo": "Electronico",
+      "cantidad_disponible": 32,
+      "estado": "Usado",
+      "descripcion": "Elemento electronico para uso de los instructores",
+      "color": "plateado",
+      "img": "../../src/assets/img/materiales/computador-portatil.png"
+    },
+    {
+      "id": "5",
+      "nombre": "Martillo",
+      "tipo": "Fisico",
+      "cantidad_disponible": 12,
+      "estado": "Usado",
+      "descripcion": "Elemento",
+      "color": "Madera",
+      "img": "../../src/assets/img/materiales/martillo.png"
+    },
+    {
+      "id": "6",
+      "nombre": "Cable Hdmi",
+      "tipo": "Electronico",
+      "cantidad_disponible": 118,
+      "estado": "Nuevo",
+      "descripcion": "Elemento electronico para uso de transmición de imagen",
+      "color": "Negro",
+      "img": "../../src/assets/img/materiales/hdmi.png"
+    },
+    {
+      "id": "7",
+      "nombre": "Proyector De Video",
+      "tipo": "Electronico",
+      "cantidad_disponible": 10,
+      "estado": "Usado",
+      "descripcion": "Elemento electronico para proyeccion de imagen",
+      "color": "Negro",
+      "img": "../../src/assets/img/materiales/proyector.png"
+    },
+    {
+      "id": "8",
+      "nombre": "Destornillador",
+      "tipo": "Fisico",
+      "cantidad_disponible": 22,
+      "estado": "Usado",
+      "descripcion": "Herramientas diseñados para apretar o aflojar tornillos ranurados de fijación sobre materiales de madera, metálicos, plásticos etc",
+      "color": "Varios",
+      "img": "../../src/assets/img/materiales/destornillador.png"
+    },
+    {
+      "id": "5afd",
+      "identificador": "10494912321321",
+      "situacion": "entregable",
+      "nombre": "Taladro",
+      "tipo": "herramientas",
+      "cantidad_disponible": "100",
+      "estado": "usado",
+      "descripcion": "esta muy bueno de estado, recien llegado",
+      "color": "naranja",
+      "img": "blob:http://localhost:4000/03f092ca-ddfb-4f82-8e54-dc83d481e0fa"
+    }
+  ]
+}

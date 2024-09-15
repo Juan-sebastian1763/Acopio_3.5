@@ -1,0 +1,21 @@
+/* Reporte.css */
+.text-green-800 {
+    color: #2f855a; /* Ajusta el color verde oscuro */
+  }
+  
+  .text-black {
+    color: #000;
+  }
+  
+  .font-bold {
+    font-weight: bold;
+  }
+  
+  .mt-4, .mt-16 {
+    margin-top: 1rem; /* Espaciado entre secciones */
+  }
+  
+  .space-y-4 {
+    gap: 1rem;
+  }
+  

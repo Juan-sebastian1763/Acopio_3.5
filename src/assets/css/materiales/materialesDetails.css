@@ -1,0 +1,24 @@
+.cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espacio entre las cards */
+  padding: 20px;
+  flex-wrap: wrap; /* Permite que se envuelvan en pantallas pequeñas */
+}
+
+.container-card,
+.card-description {
+  width: 400px; /* Ancho fijo para cada card */
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header,
+.card-description {
+  margin-bottom: 10px;
+}
+
+.text-color {
+  background-color: #0072f5;
+  color: white;
+}

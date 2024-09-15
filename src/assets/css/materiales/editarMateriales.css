@@ -1,0 +1,48 @@
+.progress-fall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    max-width: 700px;
+    height: 1000px;
+  }
+  
+  .name-material {
+    font-size: 35px;
+    text-align: center;
+  }
+  
+  .text-large {
+    font-size: 1.5rem;
+  }
+  
+  .text-tiny {
+    font-size: 0.875rem;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .properties {
+    color: #109e49;
+    font-size: 18px;
+    padding: 10px 1px 10px 10px;
+  }
+  
+  .request-button {
+    background-color: #109e49 !important;
+    color: white !important;
+  }
+  
