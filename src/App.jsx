@@ -6,6 +6,7 @@ import Materiales from "./pages/Materiales";
 import NavbarComponent from "./components/NavbarComponent";
 import Servicios from "./pages/Servicios";
 import MaterialesDetails from "./pages/Detallesmateriales/MaterialesDetails";
+import DevolucionDetails from "./pages/Detallesdevolucion/DevolucionDetails";
 import AdquisicionMateriales from "./pages/Adquisicion/AdquisicionMaterial";
 import Cookies from "universal-cookie";
 import Administrar from "./pages/administrar";
@@ -16,6 +17,8 @@ import  Reporte from "./pages/reporte";
 import Mispedidos from "./pages/mispedidos";
 import Editar from "./pages/editar";
 import EditarMateriales from "./pages/EditarMateriales";
+import Devolver from "./pages/devover";
+import Aceptado from "./pages/aceptados";
 
 function App() {
   const cookies = new Cookies();
@@ -29,15 +32,16 @@ function App() {
   console.log("Rol del usuario: " + cookies.get("rol")); // Obtener y mostrar el rol
 
   const handleLogout = () => {
-    cookies.remove("id");
-    cookies.remove("correo");
-    cookies.remove("rol"); // Elimina el rol al cerrar sesión
+    cookies.remove("id", { path: "/" });
+    cookies.remove("correo", { path: "/" });
+    cookies.remove("rol", { path: "/" });
     navigate("/login");
   };
+  
 
   // Redirigir al login si el usuario no está logueado y no está en las rutas públicas
-  if (!userLoggedIn && !["/login", "/", "/servicios"].includes(location.pathname)) {
-    navigate("/login");
+  if (userLoggedIn && location.pathname === "/login") {
+    navigate("/");
   }
 
   return (
@@ -53,12 +57,15 @@ function App() {
           <Route path="pedidos/:id" element={<PedidosDetalle />} />
           <Route path="administrar" element={<Administrar />} />
           <Route path="editar" element={<Editar />} />
+          <Route path="devolver" element={<Devolver />} />
+          <Route path="devolver/:id" element={<DevolucionDetails />} />
           <Route path="agregar" element={<Agregar />} />
           <Route path="reporte" element={<Reporte />} />
           <Route path="materiales/:id/editarmateriales" element={<EditarMateriales />} />
           <Route path="materiales/:id" element={<MaterialesDetails />} />
           <Route path="materiales/:id/adquirir" element={<AdquisicionMateriales />} />
           <Route path="mispedidos" element={<Mispedidos />} /> 
+          <Route path="aceptados" element={<Aceptado />} /> 
           <Route path="*" element={<Home />} />
         </Routes>
       </div>

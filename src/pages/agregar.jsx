@@ -1,24 +1,24 @@
-import { useState } from 'react';
-import { PhotoIcon } from '@heroicons/react/24/solid';
+import { useState } from "react";
+import { PhotoIcon } from "@heroicons/react/24/solid";
 
 export default function AgregarMaterial() {
   const [formData, setFormData] = useState({
-    identificador: '', // Nuevo campo
-    situacion: '', // Nuevo campo
-    nombre: '',
-    tipo: '',
-    cantidad_disponible: '',
-    estado: '',
-    descripcion: '',
-    color: '',
-    img: ''
+    identificador: "", // Nuevo campo
+    situacion: "", // Nuevo campo
+    nombre: "",
+    tipo: "",
+    cantidad_disponible: "",
+    estado: "",
+    descripcion: "",
+    color: "",
+    img: "",
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -27,7 +27,7 @@ export default function AgregarMaterial() {
     if (file) {
       setFormData((prevData) => ({
         ...prevData,
-        img: URL.createObjectURL(file) // Previsualización de la imagen
+        img: URL.createObjectURL(file), // Previsualización de la imagen
       }));
     }
   };
@@ -36,55 +36,56 @@ export default function AgregarMaterial() {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:3001/materiales', {
-        method: 'POST',
+      const response = await fetch("http://localhost:3001/materiales", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
 
       if (response.ok) {
-        alert('Material agregado exitosamente');
+        alert("Material agregado exitosamente");
         setFormData({
-          identificador: '',
-          situacion: '',
-          nombre: '',
-          tipo: '',
-          cantidad_disponible: '',
-          estado: '',
-          descripcion: '',
-          color: '',
-          img: ''
+          identificador: "",
+          situacion: "",
+          nombre: "",
+          tipo: "",
+          cantidad_disponible: "",
+          estado: "",
+          descripcion: "",
+          color: "",
+          img: "",
         });
       } else {
-        console.error('Error al agregar material');
+        console.error("Error al agregar material");
       }
     } catch (error) {
-      console.error('Error de red:', error);
+      console.error("Error de red:", error);
     }
   };
 
   return (
-    <div className='flex flex-col w-full login'>
+    <div className="flex flex-col w-full login">
       <form onSubmit={handleSubmit} className="space-y-12">
         <div className="border-b border-gray-900/10 pb-12">
-          <div className='text-center'>
-            <h2 className="text-base font-semibold leading-7 text-green-700">
-              ACOPIO
-            </h2>
+          <div className="text-center">
             <p className="mt-2 text-3xl font-bold tracking-tight text-green-700 sm:text-4xl">
               Agregar Nuevo Material
             </p>
             <p className="mt-1 text-sm leading-6 text-gray-600">
-              Rellena los campos para agregar un nuevo material a la base de datos.
+              Rellena los campos para agregar un nuevo material a la base de
+              datos.
             </p>
           </div>
 
           <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-            {/* Identificador */}
-            <div className="sm:col-span-4">
-              <label htmlFor="identificador" className="block text-sm font-medium leading-6 text-gray-900">
+            {/* Identificador y Situación */}
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="identificador"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Identificador
               </label>
               <div className="mt-2">
@@ -99,10 +100,11 @@ export default function AgregarMaterial() {
                 />
               </div>
             </div>
-
-            {/* Situación */}
-            <div className="sm:col-span-4">
-              <label htmlFor="situacion" className="block text-sm font-medium leading-6 text-gray-900">
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="situacion"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Situación
               </label>
               <div className="mt-2">
@@ -118,9 +120,12 @@ export default function AgregarMaterial() {
               </div>
             </div>
 
-            {/* Nombre */}
-            <div className="sm:col-span-4">
-              <label htmlFor="nombre" className="block text-sm font-medium leading-6 text-gray-900">
+            {/* Nombre y Tipo (Select) */}
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="nombre"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Nombre
               </label>
               <div className="mt-2">
@@ -135,10 +140,11 @@ export default function AgregarMaterial() {
                 />
               </div>
             </div>
-
-           {/* Tipo (Select) */}
-           <div className="sm:col-span-4">
-              <label htmlFor="tipo" className="block text-sm font-medium leading-6 text-gray-900">
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="tipo"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Tipo
               </label>
               <div className="mt-2">
@@ -157,9 +163,12 @@ export default function AgregarMaterial() {
               </div>
             </div>
 
-            {/* Cantidad Disponible */}
-            <div className="sm:col-span-4">
-              <label htmlFor="cantidad_disponible" className="block text-sm font-medium leading-6 text-gray-900">
+            {/* Cantidad Disponible y Estado (Select) */}
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="cantidad_disponible"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Cantidad Disponible
               </label>
               <div className="mt-2">
@@ -174,10 +183,11 @@ export default function AgregarMaterial() {
                 />
               </div>
             </div>
-
-            {/* Estado (Select) */}
-            <div className="sm:col-span-4">
-              <label htmlFor="estado" className="block text-sm font-medium leading-6 text-gray-900">
+            <div className="sm:col-span-3">
+              <label
+                htmlFor="estado"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Estado
               </label>
               <div className="mt-2">
@@ -196,9 +206,12 @@ export default function AgregarMaterial() {
               </div>
             </div>
 
-            {/* Descripción */}
+            {/* Descripción y Color */}
             <div className="col-span-full">
-              <label htmlFor="descripcion" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="descripcion"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Descripción
               </label>
               <div className="mt-2">
@@ -213,10 +226,11 @@ export default function AgregarMaterial() {
                 />
               </div>
             </div>
-
-            {/* Color */}
             <div className="sm:col-span-4">
-              <label htmlFor="color" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="color"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Color
               </label>
               <div className="mt-2">
@@ -234,30 +248,42 @@ export default function AgregarMaterial() {
 
             {/* Imagen */}
             <div className="col-span-full">
-  <label htmlFor="img" className="block text-sm font-medium leading-6 text-gray-900">
-    Imagen
-  </label>
-  <div className="mt-2 flex items-center gap-x-2"> {/* Cambié gap-x-3 a gap-x-2 */}
-    <PhotoIcon aria-hidden="true" className="h-8 w-8 text-gray-300" /> {/* Cambié a h-8 y w-8 */}
-    <input
-      type="file"
-      id="img"
-      name="img"
-      accept="image/*"
-      onChange={handleFileChange}
-      className="text-sm" 
-    />
-    {formData.img && (
-      <img src={formData.img} alt="Preview" className="h-12 w-12 object-cover" /> 
-    )}
-  </div>
-</div>
-
+              <label
+                htmlFor="img"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Imagen
+              </label>
+              <div className="mt-2 flex items-center gap-x-2">
+                <PhotoIcon
+                  aria-hidden="true"
+                  className="h-8 w-8 text-gray-300"
+                />
+                <input
+                  type="file"
+                  id="img"
+                  name="img"
+                  accept="image/*"
+                  onChange={handleFileChange}
+                  className="text-sm"
+                />
+                {formData.img && (
+                  <img
+                    src={formData.img}
+                    alt="Preview"
+                    className="h-12 w-12 object-cover"
+                  />
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="mt-6 flex items-center justify-end gap-x-6">
-          <button type="submit" className="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+          <button
+            type="submit"
+            className="rounded-md bg-green-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+          >
             Guardar Material
           </button>
         </div>

@@ -7,18 +7,20 @@ import "../../src/assets/css/NavBar.css";
 import Cookies from "universal-cookie";
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/react';
 import { ChevronDownIcon} from '@heroicons/react/20/solid';
-import { CloudArrowUpIcon, FingerPrintIcon, PencilSquareIcon, DocumentCurrencyBangladeshiIcon, PencilIcon} from '@heroicons/react/24/outline';
+import { CloudArrowUpIcon, FingerPrintIcon, PencilSquareIcon, DocumentCurrencyBangladeshiIcon, PencilIcon, InboxArrowDownIcon, CheckIcon} from '@heroicons/react/24/outline';
 
 const solutions = [
   { name: 'Registrar Instructor', description: "Registro de instructores al sistema", href: '/login', icon: FingerPrintIcon },
   { name: 'Solicitudes', description: 'Solicitudes de materiales', href: '/pedidos', icon: PencilSquareIcon },
+  { name: 'devolver material', description: 'devolver materiales aceptados', href: '/devolver', icon: InboxArrowDownIcon },
   { name: 'Agregar Materiales', description: 'Agregar nuevos materiales al sistema', href: '/agregar', icon: CloudArrowUpIcon },
   { name: 'Generar Reportes', description: 'Genera reportes de los materiales', href: '/reporte', icon: DocumentCurrencyBangladeshiIcon },
   { name: 'Editar Materiales', description: 'Editar materiales existentes', href: '/editar', icon: PencilIcon },
 ];
 const instructorOptions = [
-  { name: 'Mis Solicitudes', description: "Ver tus solicitudes de materiales", href: '/mispedidos', icon: PencilSquareIcon },
   { name: 'Solicitar Materiales', description: 'Solicitar nuevos materiales', href: '/materiales', icon: CloudArrowUpIcon },
+  { name: 'Mis Solicitudes', description: "Ver tus solicitudes de materiales", href: '/mispedidos', icon: PencilSquareIcon },
+  { name: 'Solicitudes Aceptadas', description: 'Solicitar nuevos materiales', href: '/aceptados', icon: CheckIcon },
 ];
 
 

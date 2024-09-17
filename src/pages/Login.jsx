@@ -15,6 +15,7 @@ function Login() {
   const [contraseña, setContraseña] = useState("");
   const [error, setError] = useState("");
   const [showAlert, setShowAlert] = useState(false); // Nuevo estado para controlar la alerta
+  const [rol, setRol] = useState("Instructor"); // Estado para manejar el rol seleccionado
   const [isAdmin, setIsAdmin] = useState(false); // Estado para verificar si el usuario es administrador
   const navigate = useNavigate();
   
@@ -28,17 +29,23 @@ function Login() {
 
   const handleRegistro = async (e) => {
     e.preventDefault();
-
+  
+    // Validar que la contraseña tenga al menos 8 caracteres
+    if (contraseña.length < 8) {
+      setError("La contraseña debe tener al menos 8 caracteres");
+      return;
+    }
+  
     // Encriptar la contraseña con MD5
     const contraseñaEncriptada = CryptoJS.MD5(contraseña).toString();
-
+  
     const nuevoUsuario = {
       correo,
       contraseña: contraseñaEncriptada,
       nombre,
-      rol: "Instructor", // Asigna automáticamente el rol de "Instructor"
+      rol, // Usa el rol seleccionado
     };
-
+  
     try {
       const response = await fetch(baseUrl, {
         method: "POST",
@@ -47,7 +54,7 @@ function Login() {
         },
         body: JSON.stringify(nuevoUsuario),
       });
-
+  
       if (response.ok) {
         setShowAlert(true); // Mostrar la alerta
         setTimeout(() => {
@@ -61,6 +68,7 @@ function Login() {
       setError("Error en la conexión con la API");
     }
   };
+  
 
   const iniciarSesion = async (e) => {
     e.preventDefault();
@@ -191,6 +199,14 @@ function Login() {
                     value={contraseña}
                     onChange={(e) => setContraseña(e.target.value)}
                   />
+                  <select
+                    value={rol}
+                    onChange={(e) => setRol(e.target.value)}
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset sm:text-sm sm:leading-6"
+                  >
+                    <option value="Instructor">Instructor</option>
+                    <option value="Administrador">administrador</option>
+                  </select>
                   <div className="flex gap-2 justify-end mt-4">
                     <Button
                       fullWidth

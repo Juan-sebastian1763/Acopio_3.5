@@ -30,10 +30,6 @@
     font-size: 0.875rem;
   }
   
-  .image {
-    width: 100%;
-    height: auto;
-  }
   
   .properties {
     color: #109e49;
@@ -45,4 +41,4 @@
     background-color: #109e49 !important;
     color: white !important;
   }
-  
+

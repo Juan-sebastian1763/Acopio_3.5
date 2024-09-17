@@ -1,7 +1,8 @@
-import jsPDF from "jspdf";
+import jsPDF from "jspdf"; 
 import autoTable from 'jspdf-autotable';
 import "../assets/css/Inicio.css";
 
+// Función para obtener los datos desde la API
 const obtenerDatosReporte = async () => {
   let url = "/src/api/db.json";
   try {
@@ -13,6 +14,7 @@ const obtenerDatosReporte = async () => {
   }
 };
 
+// Función para generar el reporte de materiales
 const generarPDFMateriales = (doc, data) => {
   const body = data.materiales.map(material => [material.id, material.nombre, material.descripcion]);
   autoTable(doc, {
@@ -21,6 +23,7 @@ const generarPDFMateriales = (doc, data) => {
   });
 };
 
+// Función para generar el reporte de solicitudes
 const generarPDFSolicitudes = (doc, data) => {
   const body = data.peticiones.map(peticion => {
     const material = data.materiales.find(material => material.id === peticion.material_id);
@@ -38,6 +41,7 @@ const generarPDFSolicitudes = (doc, data) => {
   });
 };
 
+// Función para generar el reporte de inventario
 const generarPDFInventario = (doc, data) => {
   const body = data.materiales.map(material => [material.id, material.nombre, material.cantidad_disponible]);
   autoTable(doc, {
@@ -46,6 +50,7 @@ const generarPDFInventario = (doc, data) => {
   });
 };
 
+// Función para generar el reporte de instructores
 const generarPDFInstructores = (doc, data) => {
   const body = data.usuarios.map(usuario => [usuario.id, usuario.nombre, usuario.rol]);
   autoTable(doc, {
@@ -54,9 +59,35 @@ const generarPDFInstructores = (doc, data) => {
   });
 };
 
+// Nueva función para generar el reporte de materiales devueltos
+const generarPDFMaterialesDevueltos = (doc, data) => {
+  // Verificamos si 'devoluciondetalle' existe y es un array
+  if (!data.devoluciondetalle || !Array.isArray(data.devoluciondetalle)) {
+    console.error("devoluciondetalle no existe o no es un array");
+    return;  // Salir si no existen los datos
+  }
+
+  // Mapeamos los datos para construir el cuerpo del reporte
+  const body = data.devoluciondetalle.map(devolucion => [
+    devolucion.nombre_usuario || 'N/A', // Si no hay nombre, ponemos 'N/A'
+    devolucion.descripcion,
+    devolucion.numero_telefono || 'N/A', // Si no hay teléfono, ponemos 'N/A'
+    devolucion.fecha ? new Date(devolucion.fecha).toLocaleDateString() : 'N/A' // Si no hay fecha, ponemos 'N/A'
+  ]);
+
+  // Generamos la tabla en el PDF
+  autoTable(doc, {
+    head: [['Nombre de Usuario', 'Descripción', 'Teléfono', 'Fecha']],
+    body: body,
+  });
+};
+
+
+// Función principal para generar el PDF según el tipo de reporte seleccionado
 const generarPDF = async (tipoReporte) => {
   try {
     const data = await obtenerDatosReporte();
+    console.log("Datos obtenidos:", data); // Verifica si "devoluciondetalle" está aquí
     const doc = new jsPDF();
     doc.text(`Reporte de ${tipoReporte}`, 20, 10);
 
@@ -73,6 +104,10 @@ const generarPDF = async (tipoReporte) => {
       case "Instructores":
         generarPDFInstructores(doc, data);
         break;
+      case "Materiales Devueltos":
+        console.log("Generando reporte de Materiales Devueltos", data.devoluciondetalle); // Verificar si este campo existe
+        generarPDFMaterialesDevueltos(doc, data);
+        break;
       default:
         console.error("Tipo de reporte no reconocido");
         return;
@@ -81,10 +116,11 @@ const generarPDF = async (tipoReporte) => {
     doc.save(`${tipoReporte}.pdf`);
   } catch (error) {
     console.error("Error al generar el reporte:", error);
-    // Aquí podrías agregar una notificación visual de error
   }
 };
 
+
+// Componente para mostrar los botones de reporte
 const Reporte = () => {
   return (
     <div className="flex flex-col items-center justify-center bg-white py-24">
@@ -93,7 +129,7 @@ const Reporte = () => {
           Generar Reportes
         </p>
         <p className="text-lg leading-8 text-black mb-10">
-          En esta sección puedes generar reportes detallados sobre inventario, solicitudes, materiales e instructores del centro de acopio.
+          En esta sección puedes generar reportes detallados sobre inventario, solicitudes, materiales, materiales devueltos e instructores del centro de acopio.
           Selecciona el tipo de reporte y descarga un PDF con la información correspondiente.
         </p>
       </div>
@@ -123,6 +159,14 @@ const Reporte = () => {
         >
           Instructores
         </button>
+        <button 
+          className="bg-green-700 text-white py-2 px-4 rounded hover:bg-green-600" 
+          onClick={() => generarPDF('Materiales Devueltos')} // El texto debe coincidir con el caso en el switch
+        >
+          Materiales Devueltos
+        </button>
+
+
       </div>
     </div>
   );
